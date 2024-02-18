@@ -1,0 +1,16 @@
+- hosts: all
+  become: true
+
+  tasks:
+    - name: Update Ghost configuration
+      template:
+        src: env.j2
+        dest: .env
+        mode: "644"
+    - name: install ghost
+      community.docker.docker_container:
+        name: ghost
+        image: ghost:5.79.3
+        ports:
+          - "{{ GHOST_PORT }}:2368"
+        env_file: .env

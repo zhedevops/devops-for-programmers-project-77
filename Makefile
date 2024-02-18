@@ -18,3 +18,6 @@ tf-apply:
 
 tf-destroy:
 	terraform -chdir=./terraform/ destroy
+
+deploy:
+	ansible-playbook ansible/playbook.yml -i ansible/inventory.ini --vault-password-file vault-password-file -vv

@@ -15,7 +15,6 @@ resource "yandex_mdb_mysql_cluster" "dbcluster" {
     max_connections               = 100
     default_authentication_plugin = "MYSQL_NATIVE_PASSWORD"
     innodb_print_all_deadlocks    = true
-
   }
 
   host {
@@ -30,11 +29,18 @@ resource "yandex_mdb_mysql_user" "dbuser" {
   cluster_id = yandex_mdb_mysql_cluster.dbcluster.id
   name       = var.db_user
   password   = var.db_password
+
+  permission {
+    database_name = yandex_mdb_mysql_database.db.name
+    roles         = ["ALL"]
+  }
+
   depends_on = [yandex_mdb_mysql_cluster.dbcluster]
 }
 
 resource "yandex_mdb_mysql_database" "db" {
   cluster_id = yandex_mdb_mysql_cluster.dbcluster.id
   name       = var.db_name
+
   depends_on = [yandex_mdb_mysql_cluster.dbcluster]
 }
