@@ -14,3 +14,6 @@
         ports:
           - "{{ GHOST_PORT }}:2368"
         env_file: .env
+
+  roles:
+    - role: datadog.datadog

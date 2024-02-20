@@ -18,6 +18,8 @@
 `db_user` - пользователь БД<br>
 `db_password` - пароль пользователя БД<br>
 `domain` - домен для приложения<br>
+`datadog_api_key` - API-ключ datadog<br>
+`datadog_app_key` - ключ приложения datadog<br>
 
 Инициализация конфигурации Terraform:
 ```commandline
@@ -36,6 +38,7 @@ make tf-destroy
 `make tf-validate` - валидация конфигурации Terraform<br>
 
 ### Запуск приложения [ghost](https://hub.docker.com/_/ghost), версия 5.79.3:
+<i>(Включая агент [datadog.datadog](https://galaxy.ansible.com/ui/standalone/roles/datadog/datadog/) (DD), версия 4.22.0)</i><br>
 
 Добавьте в `ansible/group_vars/all/vault.yml` переменные, зашифруйте файл<br>
 
@@ -44,6 +47,7 @@ make tf-destroy
 `DB_NAME` - название БД<br>
 `DB_USER` - пользователь БД<br>
 `DB_PASSWORD` - пароль пользователя БД<br>
+`DATADOG_KEY` - API-ключ datadog
 
 Добавьте в `ansible/group_vars/all/vars.yml` переменные<br>
 
