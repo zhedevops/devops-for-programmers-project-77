@@ -1,5 +1,5 @@
 new_iam_token:
-	yc iam create-token | awk '{print "yc_iam_token = \""$1"\""}' > secret.autofile.tfvars
+	yc iam create-token
 
 tf-init:
 	terraform -chdir=./terraform/ init
@@ -9,6 +9,9 @@ tf-init-migrate-state:
 
 tf-reconfigure:
 	terraform -chdir=./terraform/ init -reconfigure
+
+tf-validate:
+	terraform -chdir=./terraform/ validate
 
 tf-plan:
 	terraform -chdir=./terraform/ plan

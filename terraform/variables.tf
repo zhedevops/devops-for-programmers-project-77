@@ -39,3 +39,14 @@ variable "db_password" {
   type        = string
   sensitive   = true
 }
+
+variable "domain" {
+  description = "Домен"
+  type        = string
+}
+
+variable "tls_cert_id" {
+  description = "Идентификатор сертификата"
+  type        = string
+  sensitive = true
+}
