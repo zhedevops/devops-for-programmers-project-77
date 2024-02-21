@@ -22,7 +22,7 @@ resource "yandex_mdb_mysql_cluster" "dbcluster" {
     subnet_id = yandex_vpc_subnet.subnet.id
   }
 
-  depends_on  = [yandex_vpc_network.net, yandex_vpc_subnet.subnet]
+  depends_on = [yandex_vpc_network.net, yandex_vpc_subnet.subnet]
 }
 
 resource "yandex_mdb_mysql_user" "dbuser" {

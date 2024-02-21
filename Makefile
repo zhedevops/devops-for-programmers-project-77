@@ -13,6 +13,9 @@ tf-reconfigure:
 tf-validate:
 	terraform -chdir=./terraform/ validate
 
+tf-format:
+	terraform -chdir=./terraform/ fmt
+
 tf-plan:
 	terraform -chdir=./terraform/ plan
 

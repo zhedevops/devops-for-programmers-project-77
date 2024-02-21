@@ -1,6 +1,6 @@
 resource "yandex_compute_instance" "vm1" {
-  name        = "zhedev-1"
-  zone        = "ru-central1-a"
+  name = "zhedev-1"
+  zone = "ru-central1-a"
 
   resources {
     cores  = 2
@@ -22,12 +22,12 @@ resource "yandex_compute_instance" "vm1" {
     user-data = "${file("cloud-init.yaml")}"
   }
 
-  depends_on  = [yandex_mdb_mysql_cluster.dbcluster]
+  depends_on = [yandex_mdb_mysql_cluster.dbcluster]
 }
 
 resource "yandex_compute_instance" "vm2" {
-  name        = "zhedev-2"
-  zone        = "ru-central1-a"
+  name = "zhedev-2"
+  zone = "ru-central1-a"
 
   resources {
     cores  = 2
@@ -49,5 +49,5 @@ resource "yandex_compute_instance" "vm2" {
     user-data = "${file("cloud-init.yaml")}"
   }
 
-  depends_on  = [yandex_mdb_mysql_cluster.dbcluster]
+  depends_on = [yandex_mdb_mysql_cluster.dbcluster]
 }

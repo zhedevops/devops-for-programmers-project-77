@@ -36,6 +36,7 @@ make tf-destroy
 #### Вспомогательные команды:
 `make tf-reconfigure` - переинициализация конфигурации Terraform<br>
 `make tf-validate` - валидация конфигурации Terraform<br>
+`make tf-format` - форматирование конфигурации Terraform<br>
 
 ### Запуск приложения [ghost](https://hub.docker.com/_/ghost), версия 5.79.3:
 <i>(Включая агент [datadog.datadog](https://galaxy.ansible.com/ui/standalone/roles/datadog/datadog/) (DD), версия 4.22.0)</i><br>

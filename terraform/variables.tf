@@ -31,7 +31,7 @@ variable "db_name" {
 variable "db_user" {
   description = "Пользователь"
   type        = string
-//  sensitive   = true
+  //  sensitive   = true
 }
 
 variable "db_password" {
@@ -48,17 +48,17 @@ variable "domain" {
 variable "tls_cert_id" {
   description = "Идентификатор сертификата"
   type        = string
-  sensitive = true
+  sensitive   = true
 }
 
 variable "datadog_api_key" {
   description = "API-key datadog"
   type        = string
-  sensitive = true
+  sensitive   = true
 }
 
 variable "datadog_app_key" {
   description = "APP-key datadog"
   type        = string
-  sensitive = true
+  sensitive   = true
 }

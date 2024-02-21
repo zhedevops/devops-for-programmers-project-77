@@ -3,7 +3,7 @@ resource "yandex_cm_certificate" "zhedev-certificate" {
   domains = [var.domain]
 
   managed {
-  challenge_type = "DNS_CNAME"
+    challenge_type = "DNS_CNAME"
   }
 }
 

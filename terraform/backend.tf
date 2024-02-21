@@ -1,9 +1,9 @@
 terraform {
   cloud {
-      organization = "zhedev"
+    organization = "zhedev"
 
-      workspaces {
-        name = "zhedev-tf"
-      }
+    workspaces {
+      name = "zhedev-tf"
     }
+  }
 }
